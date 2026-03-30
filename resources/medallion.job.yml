@@ -1,0 +1,22 @@
+resources:
+  jobs:
+    medallion_ny:
+      name: medallion_ny
+      tasks:
+        - task_key: bronze
+          notebook_task:
+            notebook_path: ../src/bronze.ipynb
+            base_parameters:
+              catalog: ${var.catalog}
+            source: WORKSPACE
+        - task_key: silver_gold
+          depends_on:
+            - task_key: bronze
+          notebook_task:
+            notebook_path: ../src/silver_gold.ipynb
+            base_parameters:
+              catalog: ${var.catalog}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

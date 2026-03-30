@@ -26,7 +26,7 @@ targets:
       catalog: 1_dev
 
   uat:
-    mode: testing
+    mode: production
     workspace:
       host: https://adb-5253031431851369.9.azuredatabricks.net
     variables:

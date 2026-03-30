@@ -29,6 +29,7 @@ targets:
     mode: production
     workspace:
       host: https://adb-5253031431851369.9.azuredatabricks.net
+      root_path: /Workspace/Users/navallyemul@gmail.com/.bundle/${bundle.name}/${bundle.target}
     variables:
       catalog: 2_uat      
 
